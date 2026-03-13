@@ -1,0 +1,26 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814" />
+      <stop offset="60%" stop-color="#060d1a" />
+      <stop offset="100%" stop-color="#03060d" />
+    </linearGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f1f40" />
+      <stop offset="70%" stop-color="#1b263f" />
+      <stop offset="100%" stop-color="#02040b" />
+    </linearGradient>
+    <radialGradient id="glow" cx="40%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#4a6ad5" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#030509" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#grad-main)" />
+  <path d="M200 120 C 420 220, 640 60, 960 170 L 1400 100 L 1400 400 C 1120 320, 860 520, 600 420 C 360 340, 220 520, 200 580 Z"
+        fill="url(#rim)" opacity="0.55" />
+  <circle cx="1100" cy="420" r="260" fill="url(#glow)" opacity="0.9" />
+  <path d="M260 700 L 1380 620 L 1500 820 L 300 900 Z"
+        fill="rgba(5, 7, 16, 0.6)" />
+  <path d="M100 400 L 460 480 L 820 360 L 1180 520 L 1540 400 L 1600 460 L 1280 860 L 240 760 Z"
+        fill="rgba(11, 20, 50, 0.4)" />
+</svg>
