@@ -162,14 +162,14 @@ export default function HomePage() {
         <div className="container">
           <div className="glass-panel">
             <FadeHeading text="Production, rentals, staging woven into one command." />
-            <p className="content-narrow">
-              Every activation gets a Taylor AV technical director, production engineer, rental lead, and stage crew so that there are no handoffs between infrastructure and execution. We scope, rehearse, and document the run-of-show to keep lighting, audio, video, and scenic intent in sync from pre-production through strike.
-            </p>
-            <div className="media-card">
+            <div className="media-card media-card-home">
               <div className="image-frame">
                 <img src="/assets/concerts-events.jpg" alt="Concert lighting and truss" loading="lazy" />
               </div>
               <div className="media-card-content">
+                <p className="media-card-intro">
+                  Every activation gets a Taylor AV technical director, production engineer, rental lead, and stage crew so that there are no handoffs between infrastructure and execution. We scope, rehearse, and document the run-of-show to keep lighting, audio, video, and scenic intent in sync from pre-production through strike.
+                </p>
                 <h3>One plan, no surprises.</h3>
                 <p>
                   Instead of juggling multiple vendors, producers work with a single Taylor AV partner who owns every cable, amp, deck, and cue sheet. Crews respect venue rules while keeping the experience polished like a national integrator but only a local call away.

@@ -4,7 +4,7 @@ import { SectionCTA } from '../../components/SectionCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Utah County AV Partner | Taylor AV',
+  title: 'Utah County AV Production | Taylor AV',
   description: 'County fairs, civic gatherings, and mountain retreats supported by Taylor AV staging and crews.'
 };
 
@@ -28,8 +28,8 @@ export default function UtahCountyPage() {
     <>
       <Hero
         eyebrow="Utah County"
-        title="Utah County events that look national."
-        description="We merge staging, rentals, and crews so civic events, festivals, and retreats feel elevated without importing multiple vendors."
+        title="Utah County AV production for civic, campus, and corporate events."
+        description="We merge staging, rentals, and crews so Utah County events stay polished without juggling multiple vendors."
         image="/assets/community-events.jpg"
         imageAlt="Utah County event"
         taglineWords={['County', 'Retreats', 'Festivals']}

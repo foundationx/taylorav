@@ -28,7 +28,7 @@ export default function ProvoPage() {
     <>
       <Hero
         eyebrow="Provo & Utah Valley"
-        title="Production leadership for Provo campuses and HQs."
+        title="Provo AV production for campuses, headquarters, and live events."
         description="Taylor AV keeps Utah Valley launches, commencements, and tech summits running with disciplined crews and redundant equipment."
         image="/assets/services-bg.jpg"
         imageAlt="Provo AV event"

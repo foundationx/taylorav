@@ -503,6 +503,7 @@ main {
 }
 
 .glass-panel > p + .media-card,
+.glass-panel > h2 + .media-card,
 .glass-panel > p + .grid,
 .glass-panel > p + .proof-grid,
 .glass-panel > p + .service-area,
@@ -827,6 +828,9 @@ main {
 
 .media-card-content {
   padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
 }
 
 .faq-grid {
@@ -858,6 +862,20 @@ main {
   font-size: 1.3rem;
   font-family: var(--font-body);
   font-weight: 400;
+}
+
+.media-card-intro {
+  max-width: 34rem;
+}
+
+.media-card-home {
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+}
+
+@media (max-width: 900px) {
+  .media-card-home {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-highlight {

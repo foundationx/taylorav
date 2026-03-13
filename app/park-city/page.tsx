@@ -16,7 +16,7 @@ const highlights = [
       'We coordinate dock schedules and snow management with Park City properties so gear arrives staged, warmed, and ready for rehearsal.'
   },
   {
-    title: 'Sundance week ops',
+    title: 'Sundance event ops',
     detail:
       'Pop-up theaters, hybrid interviews, and sponsor lounges get separate power plans, private networks, and show callers to keep screenings on cue.'
   },
@@ -32,7 +32,7 @@ export default function ParkCityPage() {
     <>
       <Hero
         eyebrow="Park City, Utah"
-        title="AV production for Park City resorts and festival weeks."
+        title="Park City AV production for resorts, screenings, and brand events."
         description="From Sundance premieres to mountainside product launches, Taylor AV’s crews engineer mountain-ready staging, LED, and streaming."
         image="/assets/sundance.jpg"
         imageAlt="Park City stage build"

@@ -31,7 +31,7 @@ export default function SaltLakeCityPage() {
     <>
       <Hero
         eyebrow="Salt Lake City"
-        title="Salt Lake City AV production that feels in-house."
+        title="Salt Lake City AV production for conventions, civic events, and corporate shows."
         description="Headquartered minutes from downtown, Taylor AV keeps equipment, staging, and engineers on standby for civic, corporate, and touring needs."
         image="/assets/hero-concert.jpg"
         imageAlt="Salt Lake City stage"

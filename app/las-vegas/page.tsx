@@ -4,7 +4,7 @@ import { SectionCTA } from '../../components/SectionCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Las Vegas Support | Taylor AV',
+  title: 'Las Vegas AV Support | Taylor AV',
   description: 'Utah-based crews and gear deployed to Las Vegas corridors for corporate activations and touring residencies.'
 };
 
@@ -27,8 +27,8 @@ export default function LasVegasPage() {
   return (
     <>
       <Hero
-        eyebrow="Las Vegas Corridor"
-        title="Las Vegas support from a Utah-based team."
+        eyebrow="Las Vegas, Nevada"
+        title="Las Vegas AV support for tours, meetings, and hotel events."
         description="Taylor AV travels with the same engineers who run your Utah shows, giving you reliable crews for Vegas dates and national tours."
         image="/assets/hero-stage.jpg"
         imageAlt="Las Vegas event"

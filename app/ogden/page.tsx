@@ -31,7 +31,7 @@ export default function OgdenPage() {
     <>
       <Hero
         eyebrow='Ogden, Weber County'
-        title="Ogden AV rentals, staging, and crews."
+        title="Ogden AV production for festivals, venues, and civic events."
         description="From amphitheaters to city plazas, Taylor AV scales the same touring-grade rigs used downtown for Ogden audiences."
         image="/assets/community-event.jpg"
         imageAlt="Ogden community event"
