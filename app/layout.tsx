@@ -8,6 +8,7 @@ const siteUrl = 'https://taylorav.com';
 const defaultDescription =
   'Taylor AV delivers AV production leadership, rental-grade equipment, and staging crews for Salt Lake City and the Wasatch Front.';
 const ogImage = `${siteUrl}/assets/hero-concert.jpg`;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -72,6 +73,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/'
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/apple-icon.png'
+  },
   keywords: [
     'Salt Lake City AV production',
     'Utah event staging',
@@ -120,15 +126,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <script dangerouslySetInnerHTML={{ __html: 'window.dataLayer = window.dataLayer || [];' }} />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER" />
-        <Script id="gtag-init">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PLACEHOLDER');
-          `}
-        </Script>
+        {gaMeasurementId ? (
+          <>
+            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
+            <Script id="gtag-init">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}', {
+                  page_path: window.location.pathname
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>

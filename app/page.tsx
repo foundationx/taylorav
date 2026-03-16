@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { FadeHeading } from "../components/FadeHeading";
@@ -32,7 +33,7 @@ const serviceArea = [
   },
   {
     label: "Ogden",
-    detail: "Weber County arenas, festivals, and municipal activations",
+    detail: "Weber County arenas, festivals, and municipal events",
     href: "/ogden",
   },
   {
@@ -46,7 +47,7 @@ const serviceArea = [
     href: "/utah-county",
   },
   {
-    label: "Las Vegas corridors",
+    label: "Las Vegas",
     detail: "Touring corridors plus regional shows that demand Utah crews",
     href: "/las-vegas",
   },
@@ -111,7 +112,7 @@ const serviceHighlights = [
 
 const proofItems = [
   {
-    title: "Corporate + civic activations",
+    title: "Corporate + civic events",
     body: "Boardroom launches, government briefings, and university ceremonies get the same clarity as national integrators but with more responsiveness to Utah venue logistics.",
   },
   {
@@ -144,8 +145,9 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow="Salt Lake City • Wasatch Front • Las Vegas"
+        headingText="Salt Lake City AV"
         title="AV production, rentals, and staging—\nbuilt to look sharp and run on time."
-        description="Based in Salt Lake City, Taylor AV serves the Wasatch Front and beyond with corporate activations, concerts, weddings, civic gatherings, and streamed broadcasts."
+        description="Based in Salt Lake City, Taylor AV serves the Wasatch Front and beyond with corporate events, concerts, weddings, civic gatherings, and streamed broadcasts."
         image="/assets/hero-concert.jpg"
         imageAlt="Lighting and stage rig from a live production"
         taglineWords={["Precision", "crews,", "rigging,", "execution."]}
@@ -161,20 +163,22 @@ export default function HomePage() {
             <FadeHeading text="Production, rentals, staging woven into one command." />
             <div className="media-card media-card-home">
               <div className="image-frame">
-                <img
+                <Image
                   src="/assets/concerts-events.jpg"
                   alt="Concert lighting and truss"
-                  loading="lazy"
+                  width={960}
+                  height={720}
+                  sizes="(max-width: 900px) 100vw, 55vw"
                 />
               </div>
               <div className="media-card-content">
                 <p className="media-card-intro">
-                  Every activation gets a Taylor AV technical director,
-                  production engineer, rental lead, and stage crew so that there
-                  are no handoffs between infrastructure and execution. We
-                  scope, rehearse, and document the run-of-show to keep
-                  lighting, audio, video, and scenic intent in sync from
-                  pre-production through strike.
+                  Every event gets a Taylor AV technical director, production
+                  engineer, rental lead, and stage crew so that there are no
+                  handoffs between infrastructure and execution. We scope,
+                  rehearse, and document the run-of-show to keep lighting,
+                  audio, video, and scenic intent in sync from pre-production
+                  through strike.
                 </p>
                 <h3>One plan, no surprises.</h3>
                 <p>

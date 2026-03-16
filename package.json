@@ -3,10 +3,13 @@
   "private": true,
   "version": "2.0.0",
   "scripts": {
+    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",
     "dev": "next dev",
+    "dev:clean": "yarn clean && next dev",
     "build": "next build",
+    "build:clean": "yarn clean && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "next": "15.5.12",

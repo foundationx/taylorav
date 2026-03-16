@@ -1,80 +1,88 @@
-import { Hero } from '../../components/Hero';
-import { FadeHeading } from '../../components/FadeHeading';
-import { Breadcrumbs } from '../../components/Breadcrumbs';
-import { FAQSection, createFaqSchema } from '../../components/FAQSection';
-import type { Metadata } from 'next';
+import Image from "next/image";
+import { Hero } from "../../components/Hero";
+import { FadeHeading } from "../../components/FadeHeading";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
+import { FAQSection, createFaqSchema } from "../../components/FAQSection";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Services · Salt Lake City AV production leadership',
+  title: "Services · Salt Lake City AV production leadership",
   description:
-    'Taylor AV delivers AV production direction, stage management, and streaming for corporate, civic, and live events across Salt Lake City and the Wasatch Front.'
+    "Taylor AV delivers AV production direction, stage management, and streaming for corporate, civic, and live events across Salt Lake City and the Wasatch Front.",
 };
 
 const serviceCategories = [
   {
-    title: 'Corporate events & keynotes',
+    title: "Corporate events & keynotes",
     detail:
-      'Immersive corporate journeys, investor days, and product launches get cinematic lighting, crisp audio, and seamless streaming so every storyline lands with impact.'
+      "Immersive corporate journeys, investor days, and product launches get cinematic lighting, crisp audio, and seamless streaming so every storyline lands with impact.",
   },
   {
-    title: 'Live streaming & broadcast',
+    title: "Live streaming & broadcast",
     detail:
-      'Multi-camera capture, live mix, and encode stacks translate the experience to remote audiences without losing technical accuracy, supporting brand compliance and director cues.'
+      "Multi-camera capture, live mix, and encode stacks translate the experience to remote audiences without losing technical accuracy, supporting brand compliance and director cues.",
   },
   {
-    title: 'Concerts & festivals',
+    title: "Concerts & festivals",
     detail:
-      'Line arrays, theatrical mills, LED canvases, and scenic lighting rigs keep acts such as Rascal Flatts, Imagine Dragons, and national touring collectives sounding sharp in arenas and outdoor fields.'
+      "Line arrays, theatrical mills, LED canvases, and scenic lighting rigs keep acts such as Rascal Flatts, Imagine Dragons, and national touring collectives sounding sharp in arenas and outdoor fields.",
   },
   {
-    title: 'Community & civic',
+    title: "Community & civic",
     detail:
-      'With State of Utah Sole Source Cooperative Contract #VC195059, we guide universities, counties, and municipalities through approvals, permits, and veteran-grade execution.'
+      "With State of Utah Sole Source Cooperative Contract #VC195059, we guide universities, counties, and municipalities through approvals, permits, and veteran-grade execution.",
   },
   {
-    title: 'Stage management',
+    title: "Stage management",
     detail:
-      'Show callers, technical directors, and riggers coordinate cues, rehearsals, and load-in flow so no detail falls between departments.'
+      "Show callers, technical directors, and riggers coordinate cues, rehearsals, and load-in flow so no detail falls between departments.",
   },
   {
-    title: 'System execution',
+    title: "System execution",
     detail:
-      'Redundant audio routing, monitored video playback, and intelligent lighting consoles keep every cue consistent from green room to strike.'
-  }
+      "Redundant audio routing, monitored video playback, and intelligent lighting consoles keep every cue consistent from green room to strike.",
+  },
 ];
 
 const eventTypes = [
   {
-    title: 'Product + launch stories',
-    detail: 'Boardroom activations, investor days, and brand unveilings with polished scenic and broadcast-level audio.'
+    title: "Product + launch stories",
+    detail:
+      "Boardroom events, investor days, and brand unveilings with polished scenic and broadcast-level audio.",
   },
   {
-    title: 'Festivals & touring nights',
-    detail: 'Multi-headliner festivals, touring residencies, and amphitheater shows that require staging, truss, and a disciplined tech package.'
+    title: "Festivals & touring nights",
+    detail:
+      "Multi-headliner festivals, touring residencies, and amphitheater shows that require staging, truss, and a disciplined tech package.",
   },
   {
-    title: 'Community + education',
-    detail: 'Commencements, civic celebrations, and university gatherings with accessible staging and ADA-compliant ramps.'
+    title: "Community + education",
+    detail:
+      "Commencements, civic celebrations, and university gatherings with accessible staging and ADA-compliant ramps.",
   },
   {
-    title: 'Hybrid & broadcast',
-    detail: 'Live-to-stream, panel-ready, and broadcast-grade feeds with real-time control rooms and remote director cues.'
-  }
+    title: "Hybrid & broadcast",
+    detail:
+      "Live-to-stream, panel-ready, and broadcast-grade feeds with real-time control rooms and remote director cues.",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'Can you provide CAD drawings and engineering stamps?',
-    answer: 'Yes. Our project managers deliver CAD, rigging certs, and stamped calculations once we confirm ceiling loads and stage positions.'
+    question: "Can you provide CAD drawings and engineering stamps?",
+    answer:
+      "Yes. Our project managers deliver CAD, rigging certs, and stamped calculations once we confirm ceiling loads and stage positions.",
   },
   {
-    question: 'Do you integrate with in-house AV teams?',
-    answer: 'We regularly act as lead or sub-contractor. We’ll align comms, cue sheets, and patch lists so responsibilities stay clear.'
+    question: "Do you integrate with in-house AV teams?",
+    answer:
+      "We regularly act as lead or sub-contractor. We’ll align comms, cue sheets, and patch lists so responsibilities stay clear.",
   },
   {
-    question: 'What is covered in your production leadership retainer?',
-    answer: 'Advance calls, cue-to-cue rehearsals, crew staffing, rental prep, and strike logistics. Travel and custom fabrication are scoped separately.'
-  }
+    question: "What is covered in your production leadership retainer?",
+    answer:
+      "Advance calls, cue-to-cue rehearsals, crew staffing, rental prep, and strike logistics. Travel and custom fabrication are scoped separately.",
+  },
 ];
 
 export default function ServicesPage() {
@@ -82,17 +90,23 @@ export default function ServicesPage() {
     <>
       <Hero
         eyebrow="Services aware • Salt Lake City + Wasatch Front"
+        headingText="AV Production Services"
         title="Production direction engineered for the Wasatch Front."
-        description="From corporate stages to festivals and streamed broadcasts, Taylor AV keeps Utah activations polished with engineering, staging, and rental depth."
+        description="From corporate stages to festivals and streamed broadcasts, Taylor AV keeps Utah events polished with engineering, staging, and rental depth."
         image="/assets/services-bg.jpg"
         imageAlt="Audio visual equipment rigged for an event"
-        taglineWords={['Plan', 'Coordinate', 'Deliver']}
+        taglineWords={["Plan", "Coordinate", "Deliver"]}
         parallaxSpeed={0.08}
       />
 
-      <section className="section section-compact" aria-label="Breadcrumb navigation">
+      <section
+        className="section section-compact"
+        aria-label="Breadcrumb navigation"
+      >
         <div className="container">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Services" }]}
+          />
         </div>
       </section>
 
@@ -101,19 +115,35 @@ export default function ServicesPage() {
           <div className="glass-panel">
             <FadeHeading text="Engineering, design, and production leadership." />
             <p>
-              We document every cue, load-in path, and lighting focus so Taylor AV, venue partners, and designers stay aligned. Our Salt Lake City producers know the permitting, access, and union requirements that other national integrators miss, and we keep the same team through rehearsal, show, and strike.
+              We document every cue, load-in path, and lighting focus so Taylor
+              AV, venue partners, and designers stay aligned. Our Salt Lake City
+              producers know the permitting, access, and union requirements that
+              other national integrators miss, and we keep the same team through
+              rehearsal, show, and strike.
             </p>
             <div className="media-card">
               <div className="image-frame">
-                <img src="/assets/community-event.jpg" alt="Community AV activation" loading="lazy" />
+                <Image
+                  src="/assets/community-event.jpg"
+                  alt="Community AV event"
+                  width={960}
+                  height={720}
+                  sizes="(max-width: 900px) 100vw, 55vw"
+                />
               </div>
               <div className="media-card-content">
-                <h3>We shepherd the activation from concept to strike.</h3>
+                <h3>We shepherd the event from concept to strike.</h3>
                 <p>
-                  Designers, producers, and marketing teams collaborate with a single point of accountability. We scope the run-of-show, rehearsal notes, and power plans so no detail is left to chance.
+                  Designers, producers, and marketing teams collaborate with a
+                  single point of accountability. We scope the run-of-show,
+                  rehearsal notes, and power plans so no detail is left to
+                  chance.
                 </p>
                 <p>
-                  Instead of separate rental and production vendors, Taylor AV keeps leadership, rentals, and staging under one Salt Lake City command, which keeps crews nimble across Ogden, Provo, Park City, and Las Vegas.
+                  Instead of separate rental and production vendors, Taylor AV
+                  keeps leadership, rentals, and staging under one Salt Lake
+                  City command, which keeps crews nimble across Ogden, Provo,
+                  Park City, and Las Vegas.
                 </p>
               </div>
             </div>
@@ -121,10 +151,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <FAQSection title="Service FAQs" intro="Straight answers to the questions production teams ask most." items={faqItems} />
+      <FAQSection
+        title="Service FAQs"
+        intro="Straight answers to the questions production teams ask most."
+        items={faqItems}
+      />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(createFaqSchema(faqItems)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(createFaqSchema(faqItems)),
+        }}
       />
 
       <section className="section">
@@ -132,7 +168,9 @@ export default function ServicesPage() {
           <div className="glass-panel">
             <FadeHeading text="Event categories we engineer." />
             <p>
-              Corporate keynotes, civic commemorations, concerts, festivals, and hybrid broadcasts all rely on documented planning, disciplined crews, and the rental depth to scale on cue.
+              Corporate keynotes, civic commemorations, concerts, festivals, and
+              hybrid broadcasts all rely on documented planning, disciplined
+              crews, and the rental depth to scale on cue.
             </p>
             <div className="grid">
               {serviceCategories.map((category) => (
@@ -151,7 +189,10 @@ export default function ServicesPage() {
           <div className="glass-panel">
             <FadeHeading text="Operational clarity from advance through strike." />
             <p>
-              Running a show across multiple city blocks, resorts, or streaming platforms demands transparency. Our schedules, passes, and tech rehearsals are updated in real time so we can react before issues become visible.
+              Running a show across multiple city blocks, resorts, or streaming
+              platforms demands transparency. Our schedules, passes, and tech
+              rehearsals are updated in real time so we can react before issues
+              become visible.
             </p>
             <div className="grid">
               {eventTypes.map((item) => (
@@ -170,7 +211,9 @@ export default function ServicesPage() {
           <div className="cta-banner">
             <h3>Need something more custom than a rental rack?</h3>
             <p>
-              We blend designers, engineers, and technicians from Salt Lake City and beyond so your service is guided by a real, responsive team that can pivot when the scope changes.
+              We blend designers, engineers, and technicians from Salt Lake City
+              and beyond so your service is guided by a real, responsive team
+              that can pivot when the scope changes.
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 export type StageCard = {
@@ -49,7 +50,13 @@ export function StageGallery({ cards }: StageGalleryProps) {
           data-parallax-speed={0.02 + (index % 3) * 0.015}
         >
           <div className="stage-card-media">
-            <img src={card.image} alt={card.imageAlt} loading="lazy" />
+            <Image
+              src={card.image}
+              alt={card.imageAlt}
+              width={720}
+              height={480}
+              sizes="(max-width: 900px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
             <div className="stage-card-border" aria-hidden="true" />
             <div className="stage-card-glow" aria-hidden="true" />
           </div>

@@ -1,11 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef } from 'react';
+import { trackEvent } from '../lib/analytics';
 import { HeroScramble } from './HeroScramble';
 
 type HeroProps = {
   eyebrow: string;
+  headingText?: string;
   title: string;
   description: string;
   image: string;
@@ -19,6 +22,7 @@ type HeroProps = {
 export function Hero(props: HeroProps) {
   const {
     eyebrow,
+    headingText,
     title,
     description,
     image,
@@ -28,8 +32,10 @@ export function Hero(props: HeroProps) {
     parallaxSpeed = 0.12,
     videoFullBleed = false
   } = props;
+  const h1Text = headingText ?? title;
   const normalizedTitle = useMemo(() => title.replace(/\\n/g, '\n'), [title]);
-  const titleLines = useMemo(() => normalizedTitle.split('\n'), [normalizedTitle]);
+  const normalizedHeading = useMemo(() => h1Text.replace(/\\n/g, '\n'), [h1Text]);
+  const headingLines = useMemo(() => normalizedHeading.split('\n'), [normalizedHeading]);
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,12 +87,13 @@ export function Hero(props: HeroProps) {
       <div className="container hero-grid">
         {!(videoFullBleed && backgroundVideo) ? (
           <div className="hero-visual image-frame" ref={imageRef}>
-            <img
+            <Image
               src={image}
               alt={imageAlt}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
+              width={1400}
+              height={1000}
+              priority
+              sizes="(max-width: 900px) 100vw, 50vw"
             />
           </div>
         ) : null}
@@ -95,23 +102,32 @@ export function Hero(props: HeroProps) {
           <h1>
             <span className="hero-text">
               <span className="hero-static" aria-hidden="true">
-                {titleLines.map((line, index) => (
+                {headingLines.map((line, index) => (
                   <span key={`${line}-${index}`}>
                     {line}
-                    {index < titleLines.length - 1 ? <br /> : null}
+                    {index < headingLines.length - 1 ? <br /> : null}
                   </span>
                 ))}
               </span>
-              <HeroScramble text={normalizedTitle} />
+              <HeroScramble text={normalizedHeading} />
             </span>
-            <span className="sr-only">{normalizedTitle.replace(/\n/g, ' ')}</span>
+            <span className="sr-only">{normalizedHeading.replace(/\n/g, ' ')}</span>
           </h1>
+          {headingText ? <p className="hero-title-copy">{normalizedTitle}</p> : null}
           <p className="hero-lede">{description}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/contact">
+            <Link
+              className="button button-primary"
+              href="/contact"
+              onClick={() => trackEvent('cta_click', { key: 'hero_quote', label: 'Request a Quote' })}
+            >
               Request a Quote
             </Link>
-            <a className="button button-ghost" href="tel:+18015201699">
+            <a
+              className="button button-ghost"
+              href="tel:+18015201699"
+              onClick={() => trackEvent('cta_click', { key: 'hero_call', label: 'Call +1 (801) 520-1699' })}
+            >
               Call +1 (801) 520-1699
             </a>
           </div>

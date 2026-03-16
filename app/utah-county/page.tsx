@@ -28,6 +28,7 @@ export default function UtahCountyPage() {
     <>
       <Hero
         eyebrow="Utah County"
+        headingText="Utah County AV"
         title="Utah County AV production for civic, campus, and corporate events."
         description="We merge staging, rentals, and crews so Utah County events stay polished without juggling multiple vendors."
         image="/assets/community-events.jpg"
