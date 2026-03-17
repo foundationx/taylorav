@@ -200,7 +200,7 @@ export function ContactForm() {
 
 
       <div className="form-group">
-        <label htmlFor="message">What's the show?</label>
+        <label htmlFor="message">What&apos;s the show?</label>
         <textarea
           id="message"
           name="message"

@@ -52,7 +52,7 @@ export default function SaltLakeCityPage() {
           <div className="glass-panel">
             <FadeHeading text="Built for Salt Lake timelines." />
             <p className="content-narrow">
-              Whether it's a boardroom address or a multi-stage event, we own
+              Whether it&apos;s a boardroom address or a multi-stage event, we own
               the gear and the people, keeping every cue on time.
             </p>
             <div className="grid">
