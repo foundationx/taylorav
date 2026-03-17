@@ -4,8 +4,15 @@ import { SectionCTA } from '../../components/SectionCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Utah County AV Production | Taylor AV',
-  description: 'County fairs, civic gatherings, and mountain retreats supported by Taylor AV staging and crews.'
+  title: 'Utah County AV Production',
+  description: 'County fairs, civic gatherings, and mountain retreats supported by Taylor AV staging and crews.',
+  alternates: { canonical: '/utah-county' },
+  other: {
+    'geo.region': 'US-UT',
+    'geo.placename': 'Utah County',
+    'geo.position': '40.1500;-111.6600',
+    'ICBM': '40.1500, -111.6600',
+  },
 };
 
 const highlights = [
@@ -28,8 +35,7 @@ export default function UtahCountyPage() {
     <>
       <Hero
         eyebrow="Utah County"
-        headingText="Utah County AV"
-        title="Utah County AV production for civic, campus, and corporate events."
+        title="Utah County AV production."
         description="We merge staging, rentals, and crews so Utah County events stay polished without juggling multiple vendors."
         image="/assets/community-events.jpg"
         imageAlt="Utah County event"
@@ -40,7 +46,7 @@ export default function UtahCountyPage() {
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="County partnerships that run smooth." />
+            <FadeHeading text="County partnerships that run smoothly." />
             <p className="content-narrow">
               Our Riverton warehouse keeps rentals nearby, reducing freight costs while giving you quick access to backup gear.
             </p>

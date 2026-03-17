@@ -2,6 +2,7 @@ export type ContactPayload = {
   fullName: string;
   email: string;
   phone: string;
+  eventType?: string;
   eventDate?: string;
   venue?: string;
   audience?: string;
@@ -28,19 +29,3 @@ export function validateContactPayload(payload: ContactPayload) {
   return errors;
 }
 
-export function buildContactFallbackUrl(payload: ContactPayload) {
-  const subject = `Taylor AV quote request from ${payload.fullName || "website visitor"}`;
-  const body = [
-    `Name: ${payload.fullName || ""}`,
-    `Email: ${payload.email || ""}`,
-    `Phone: ${payload.phone || ""}`,
-    `Event date: ${payload.eventDate || ""}`,
-    `Venue: ${payload.venue || ""}`,
-    `Audience: ${payload.audience || ""}`,
-    "",
-    "Project details:",
-    payload.message || "",
-  ].join("\n");
-
-  return `mailto:hello@taylorav.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}

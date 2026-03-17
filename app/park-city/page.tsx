@@ -4,9 +4,16 @@ import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Park City AV Production | Taylor AV",
+  title: "Park City AV Production",
   description:
     "Dedicated Park City AV production crews for Sundance events, mountain resorts, and luxury hospitality events.",
+  alternates: { canonical: '/park-city' },
+  other: {
+    'geo.region': 'US-UT',
+    'geo.placename': 'Park City',
+    'geo.position': '40.6461;-111.4980',
+    'ICBM': '40.6461, -111.4980',
+  },
 };
 
 const highlights = [
@@ -32,8 +39,7 @@ export default function ParkCityPage() {
     <>
       <Hero
         eyebrow="Park City, Utah"
-        headingText="Park City AV"
-        title="Park City AV production for resorts, screenings, and brand events."
+        title="Park City AV production."
         description="From Sundance premieres to mountainside product launches, Taylor AV’s crews engineer mountain-ready staging, LED, and streaming."
         image="/assets/sundance.jpg"
         imageAlt="Park City stage build"

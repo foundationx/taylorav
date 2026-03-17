@@ -4,16 +4,23 @@ import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Las Vegas AV Support | Taylor AV",
+  title: "Las Vegas AV Support",
   description:
     "Utah-based crews and gear deployed to Las Vegas corridors for corporate events and touring residencies.",
+  alternates: { canonical: '/las-vegas' },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Las Vegas',
+    'geo.position': '36.1699;-115.1398',
+    'ICBM': '36.1699, -115.1398',
+  },
 };
 
 const highlights = [
   {
     title: "Touring corridors",
     detail:
-      "We truck LED, audio, and staging from Utah to Vegas, Phoenix, and SoCal stops to keep continuity between shows.",
+      "We truck LED, audio, and staging from Utah to Las Vegas, Phoenix, and Southern California to keep crew and equipment continuity between shows.",
   },
   {
     title: "Hotel ballrooms",
@@ -32,8 +39,7 @@ export default function LasVegasPage() {
     <>
       <Hero
         eyebrow="Las Vegas, Nevada"
-        headingText="Las Vegas AV"
-        title="Las Vegas AV support for tours, meetings, and hotel events."
+        title="Las Vegas AV production."
         description="Taylor AV travels with the same engineers who run your Utah shows, giving you reliable crews for Vegas dates and national tours."
         image="/assets/hero-stage.jpg"
         imageAlt="Las Vegas event"
@@ -44,7 +50,7 @@ export default function LasVegasPage() {
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Traveling with you down I-15." />
+            <FadeHeading text="Same crew, same gear — extended to Las Vegas." />
             <p className="content-narrow">
               We pre-stage freight, schedule driver teams, and manage union
               paperwork so Vegas stops feel like an extension of your Utah

@@ -4,9 +4,16 @@ import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Provo AV Production | Taylor AV",
+  title: "Provo AV Production",
   description:
     "BYU, UVU, and Utah Valley corporate events led by Taylor AV’s staging, streaming, and rental teams.",
+  alternates: { canonical: ‘/provo’ },
+  other: {
+    ‘geo.region’: ‘US-UT’,
+    ‘geo.placename’: ‘Provo’,
+    ‘geo.position’: ‘40.2338;-111.6585’,
+    ‘ICBM’: ‘40.2338, -111.6585’,
+  },
 };
 
 const highlights = [
@@ -32,8 +39,7 @@ export default function ProvoPage() {
     <>
       <Hero
         eyebrow="Provo & Utah Valley"
-        headingText="Provo AV"
-        title="Provo AV production for campuses, headquarters, and live events."
+        title="Provo AV production."
         description="Taylor AV keeps Utah Valley launches, commencements, and tech summits running with disciplined crews and redundant equipment."
         image="/assets/services-bg.jpg"
         imageAlt="Provo AV event"
