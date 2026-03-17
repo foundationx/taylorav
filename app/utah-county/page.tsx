@@ -19,7 +19,7 @@ const highlights = [
   },
   {
     title: 'Public agencies',
-    detail: 'Taylor AV’s Sole Source contract simplifies procurement for county departments and public safety briefings.'
+    detail: "Taylor AV's Sole Source contract simplifies procurement for county departments and public safety briefings."
   }
 ];
 
@@ -54,7 +54,7 @@ export default function UtahCountyPage() {
             </div>
             <SectionCTA
               heading="Share your county calendar"
-              body="We’ll map stages, crews, and logistics for the entire season so every event stays on cue."
+              body="We'll map stages, crews, and logistics for the entire season so every event stays on cue."
               primaryHref="/contact"
               primaryLabel="Plan county season"
               secondaryHref="tel:+18015201699"

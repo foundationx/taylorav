@@ -60,7 +60,7 @@ export default function LasVegasPage() {
             </div>
             <SectionCTA
               heading="Sync Vegas dates"
-              body="Send your routing or RFP and we’ll show how Taylor AV covers both Wasatch and Vegas legs with one crew."
+              body="Send your routing or RFP and we'll show how Taylor AV covers both Wasatch and Vegas legs with one crew."
               primaryHref="/contact"
               primaryLabel="Plan Vegas show"
               secondaryHref="tel:+18015201699"

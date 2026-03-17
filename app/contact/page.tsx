@@ -46,9 +46,9 @@ export default function ContactPage() {
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Send us the details, we’ll handle the rest." />
+            <FadeHeading text="Send us the details, we'll handle the rest." />
             <p>
-              Fill in the key information and we’ll respond with a scoped plan,
+              Fill in the key information and we'll respond with a scoped plan,
               equipment list, and staffing options.
             </p>
             <ContactForm />

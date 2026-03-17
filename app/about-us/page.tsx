@@ -31,7 +31,7 @@ const proofGrid = [
   {
     title: "Technical staff",
     detail:
-      "System engineers, audio techs, lighting programmers, and stagehands follow the show caller’s lead.",
+      "System engineers, audio techs, lighting programmers, and stagehands follow the show caller's lead.",
   },
   {
     title: "Event readiness",
@@ -52,7 +52,7 @@ export default function AboutPage() {
         eyebrow="About us • Salt Lake City"
         headingText="About Taylor AV"
         title="Taylor AV is a Salt Lake City AV partner\nbuilt on technical discipline."
-        description="We blend production direction, rental inventory, staging, and technicians into a reliable partner for Utah’s premium events."
+        description="We blend production direction, rental inventory, staging, and technicians into a reliable partner for Utah's premium events."
         image="/assets/about-bg.jpg"
         imageAlt="High-end AV experience in a ballroom"
         taglineWords={["Reliability", "Precision", "Preparation"]}
@@ -149,10 +149,10 @@ export default function AboutPage() {
         <div className="container">
           <div className="quote-block">
             <p>
-              “There are plenty of integrators, but the people behind the gear
-              are what truly count. Taylor AV’s team knows our venues, our
+              "There are plenty of integrators, but the people behind the gear
+              are what truly count. Taylor AV's team knows our venues, our
               technical goals, and how to bring a clean aesthetic to each
-              production.”
+              production."
             </p>
           </div>
         </div>

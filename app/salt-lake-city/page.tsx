@@ -46,7 +46,7 @@ export default function SaltLakeCityPage() {
           <div className="glass-panel">
             <FadeHeading text="Built for Salt Lake timelines." />
             <p className="content-narrow">
-              Whether it’s a boardroom address or a multi-stage event, we own
+              Whether it's a boardroom address or a multi-stage event, we own
               the gear and the people, keeping every cue on time.
             </p>
             <div className="grid">
@@ -59,7 +59,7 @@ export default function SaltLakeCityPage() {
             </div>
             <SectionCTA
               heading="Ready for a Salt Lake walkthrough?"
-              body="Send us your site packet or RFP outline and we’ll respond with CAD drawings, staffing plans, and a production calendar."
+              body="Send us your site packet or RFP outline and we'll respond with CAD drawings, staffing plans, and a production calendar."
               primaryHref="/contact"
               primaryLabel="Start Salt Lake scope"
               secondaryHref="tel:+18015201699"

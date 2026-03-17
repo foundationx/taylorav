@@ -34,7 +34,7 @@ export default function ParkCityPage() {
         eyebrow="Park City, Utah"
         headingText="Park City AV"
         title="Park City AV production for resorts, screenings, and brand events."
-        description="From Sundance premieres to mountainside product launches, Taylor AV’s crews engineer mountain-ready staging, LED, and streaming."
+        description="From Sundance premieres to mountainside product launches, Taylor AV's crews engineer mountain-ready staging, LED, and streaming."
         image="/assets/sundance.jpg"
         imageAlt="Park City stage build"
         taglineWords={["Sundance", "Resorts", "Snow-ready"]}
@@ -60,7 +60,7 @@ export default function ParkCityPage() {
             </div>
             <SectionCTA
               heading="Need Park City references?"
-              body="We’ll share recent hospitality decks and resort approvals so you can brief stakeholders with confidence."
+              body="We'll share recent hospitality decks and resort approvals so you can brief stakeholders with confidence."
               primaryHref="/contact"
               primaryLabel="Plan Park City show"
               secondaryHref="tel:+18015201699"

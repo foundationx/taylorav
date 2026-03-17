@@ -137,7 +137,7 @@ export default function StagingPage() {
             <StageGallery cards={stagingGallery} />
             <SectionCTA
               heading="Need help choosing the right footprint?"
-              body="Send us the site plan or crowd layout and we’ll match the proper deck size, wind rating, and rigging package."
+              body="Send us the site plan or crowd layout and we'll match the proper deck size, wind rating, and rigging package."
               primaryHref="/contact"
               primaryLabel="Plan my stage"
               secondaryHref="tel:+18015201699"

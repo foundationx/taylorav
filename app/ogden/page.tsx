@@ -59,7 +59,7 @@ export default function OgdenPage() {
             </div>
             <SectionCTA
               heading="Schedule an Ogden walkthrough"
-              body="Share your festival or civic outline and we’ll deliver rigging drawings, pricing, and crew assignments."
+              body="Share your festival or civic outline and we'll deliver rigging drawings, pricing, and crew assignments."
               primaryHref="/contact"
               primaryLabel="Plan Ogden show"
               secondaryHref="tel:+18015201699"

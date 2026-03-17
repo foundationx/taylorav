@@ -76,7 +76,7 @@ const faqItems = [
   {
     question: "Do you integrate with in-house AV teams?",
     answer:
-      "We regularly act as lead or sub-contractor. We’ll align comms, cue sheets, and patch lists so responsibilities stay clear.",
+      "We regularly act as lead or sub-contractor. We'll align comms, cue sheets, and patch lists so responsibilities stay clear.",
   },
   {
     question: "What is covered in your production leadership retainer?",

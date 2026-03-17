@@ -56,7 +56,7 @@ const serviceArea = [
 const testimonials = [
   {
     quote:
-      "Taylor AV’s crew advanced our show weeks earlier than other vendors and saved six hours of load-in the day of the event.",
+      "Taylor AV's crew advanced our show weeks earlier than other vendors and saved six hours of load-in the day of the event.",
     name: "Jordan Blake",
     title: "Executive Producer",
     company: "North Rim Agency",
@@ -256,7 +256,7 @@ export default function HomePage() {
           </div>
           <SectionCTA
             heading="Need an on-call AV partner before your RFP goes live?"
-            body="Share your run-of-show, venue packet, or design intent and we’ll return a scoped plan with logistics, staffing, and pricing clarity."
+            body="Share your run-of-show, venue packet, or design intent and we'll return a scoped plan with logistics, staffing, and pricing clarity."
             primaryHref="/contact"
             primaryLabel="Scope my event"
             secondaryHref="tel:+18015201699"

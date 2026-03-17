@@ -151,7 +151,7 @@ export default function RentalsPage() {
             </div>
             <SectionCTA
               heading="Want us to pre-flight your rental list?"
-              body="Send the venue packet or engineering doc and we’ll align power, rigging, and crew notes before you issue the PO."
+              body="Send the venue packet or engineering doc and we'll align power, rigging, and crew notes before you issue the PO."
               primaryHref="/contact"
               primaryLabel="Review my specs"
               secondaryHref="tel:+18015201699"

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Provo AV Production | Taylor AV",
   description:
-    "BYU, UVU, and Utah Valley corporate events led by Taylor AV’s staging, streaming, and rental teams.",
+    "BYU, UVU, and Utah Valley corporate events led by Taylor AV's staging, streaming, and rental teams.",
 };
 
 const highlights = [
@@ -59,7 +59,7 @@ export default function ProvoPage() {
             </div>
             <SectionCTA
               heading="Book a Utah Valley walkthrough"
-              body="Send us your auditorium specs or HQ briefings and we’ll return drawings, rental lists, and show management plans."
+              body="Send us your auditorium specs or HQ briefings and we'll return drawings, rental lists, and show management plans."
               primaryHref="/contact"
               primaryLabel="Plan Provo show"
               secondaryHref="tel:+18015201699"
