@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
-import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Rentals · Salt Lake City AV equipment",
   description:
     "Taylor AV provides rental-grade audio, video, lighting, and streaming gear for events across Salt Lake City, the Wasatch Front, and touring events.",
+  alternates: { canonical: '/rentals' },
 };
 
 const equipment = [
@@ -51,26 +52,14 @@ export default function RentalsPage() {
   return (
     <>
       <Hero
-        eyebrow="Rentals • audio, video, lighting"
-        headingText="AV Equipment Rentals"
-        title="Service-ready audio, video, and lighting rentals where uptime matters."
+        eyebrow="Rentals • Audio, Video & Lighting"
+        title="Rentals where uptime matters."
         description="Taylor AV keeps Utah productions running with vetted rental gear, tech support, and a single crew that understands the space from first call to strike."
         image="/assets/live-streaming.jpg"
         imageAlt="Live event streaming and technician station"
         taglineWords={["Audio", "Video", "Lighting", "Streaming"]}
         parallaxSpeed={0.09}
       />
-
-      <section
-        className="section section-compact"
-        aria-label="Breadcrumb navigation"
-      >
-        <div className="container">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Rentals" }]}
-          />
-        </div>
-      </section>
 
       <section className="section">
         <div className="container">
@@ -164,14 +153,16 @@ export default function RentalsPage() {
       <section className="section">
         <div className="container">
           <div className="cta-banner">
-            <h3>
-              Ready to turn the rental into a production-grade experience?
-            </h3>
+            <h3>Ready to turn the rental into a production-grade experience?</h3>
             <p>
               Contact us for a rental scope that includes staging, crew support,
               and logistics. We will return a scoped plan and quote that
               respects your timeline and budget.
             </p>
+            <div className="cta-banner-actions">
+              <Link href="/contact" className="button button-primary">Request rental quote</Link>
+              <Link href="/staging" className="button button-ghost">Browse staging</Link>
+            </div>
           </div>
         </div>
       </section>

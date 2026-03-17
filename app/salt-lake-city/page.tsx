@@ -4,9 +4,16 @@ import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Salt Lake City AV Production | Taylor AV",
+  title: "Salt Lake City AV Production",
   description:
     "Full-scale AV production, rentals, and crews for downtown Salt Lake City venues and civic institutions.",
+  alternates: { canonical: '/salt-lake-city' },
+  other: {
+    'geo.region': 'US-UT',
+    'geo.placename': 'Salt Lake City',
+    'geo.position': '40.7608;-111.8910',
+    'ICBM': '40.7608, -111.8910',
+  },
 };
 
 const highlights = [
@@ -32,8 +39,7 @@ export default function SaltLakeCityPage() {
     <>
       <Hero
         eyebrow="Salt Lake City"
-        headingText="Salt Lake City AV"
-        title="Salt Lake City AV production for conventions, civic events, and corporate shows."
+        title="Salt Lake City AV production."
         description="Headquartered minutes from downtown, Taylor AV keeps equipment, staging, and engineers on standby for civic, corporate, and touring needs."
         image="/assets/hero-concert.jpg"
         imageAlt="Salt Lake City stage"

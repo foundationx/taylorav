@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import {
-  buildContactFallbackUrl,
   type ContactPayload,
   validateContactPayload,
 } from '../../../lib/contact';
@@ -43,16 +42,10 @@ export async function POST(request: Request) {
   }
 
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL?.trim();
-  const fallbackUrl = buildContactFallbackUrl(payload);
 
   if (!webhookUrl) {
     return NextResponse.json(
-      {
-        ok: false,
-        message:
-          'Lead delivery is not configured yet. Use the email fallback below until CONTACT_WEBHOOK_URL is set.',
-        fallbackUrl,
-      },
+      { ok: false, message: 'Contact delivery is not configured yet. Please call us at +1 (801) 520-1699.' },
       { status: 503 }
     );
   }
@@ -88,12 +81,7 @@ export async function POST(request: Request) {
 
   if (!webhookResponse.ok) {
     return NextResponse.json(
-      {
-        ok: false,
-        message:
-          'The contact pipeline is reachable but did not accept this submission. Use the email fallback below while the webhook is fixed.',
-        fallbackUrl,
-      },
+      { ok: false, message: 'Submission could not be delivered. Please call us at +1 (801) 520-1699 and we\'ll get you sorted.' },
       { status: 502 }
     );
   }

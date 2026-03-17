@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
 import { StageGallery, StageCard } from "../../components/StageGallery";
-import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
@@ -10,6 +9,7 @@ export const metadata: Metadata = {
   title: "Staging · Stage decks, truss, and rigging",
   description:
     "Taylor AV stages, truss, and rigging crews build arenas, ballrooms, and resort venues across the Wasatch Front with modular stage platforms and safe execution.",
+  alternates: { canonical: '/staging' },
 };
 
 const stagingGallery: StageCard[] = [
@@ -19,7 +19,7 @@ const stagingGallery: StageCard[] = [
     image: "/assets/hero-stage.jpg",
     imageAlt: "Stageline SL250 delivering an outdoor event",
     detail:
-      "Introducing the Stageline SL250: Your portable stage solution. Durable build, hydraulic roof, and hidden stairs deliver a safe, clean platform for concerts, broadcast launches, and large-scale galas.",
+      "Our largest hydraulic roof stage — fast to deploy and engineered for outdoor concerts, broadcast launches, and large-scale galas. Durable build, integrated stairs, and a hydraulic roof that goes up in two hours.",
     specs: ["Size: 32' x 24'", "Setup: 2 hrs", "Wind rating: 90 mph"],
   },
   {
@@ -73,10 +73,10 @@ const stagingGallery: StageCard[] = [
   {
     title: "Truss & rigging packages",
     tagline: "Architectural frames",
-    image: "/assets/community-event.jpg",
+    image: "/assets/community-events.jpg",
     imageAlt: "Truss lighting grid",
     detail:
-      "Truss towers, rigging rigs, scenic frames, and LED mounting points that work with scenic drops, finish lines, and structural design.",
+      "Truss towers, rigging hardware, scenic frames, and LED mounting points that integrate with scenic drops, finish lines, and structural design elements.",
     specs: ['Box truss 12"-20"', "Certified riggers", "PE-stamped drawings"],
   },
   {
@@ -98,9 +98,8 @@ export default function StagingPage() {
   return (
     <>
       <Hero
-        eyebrow="Staging • decks, truss, rigging crews"
-        headingText="Event Staging"
-        title="Stages, truss, and rigging prepped for every scale."
+        eyebrow="Staging • Decks, Truss & Rigging"
+        title="Stages and rigging for every scale."
         description="Modular decks, hydraulic Stageline platforms, and certified riggers keep the focus on creative intent while our crews handle load-in and strike."
         image="/assets/staging.jpg"
         imageAlt="Modular stage setup with lighting"
@@ -112,17 +111,6 @@ export default function StagingPage() {
         taglineWords={["Decks", "Truss", "Crew"]}
         parallaxSpeed={0.08}
       />
-
-      <section
-        className="section section-compact"
-        aria-label="Breadcrumb navigation"
-      >
-        <div className="container">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Staging" }]}
-          />
-        </div>
-      </section>
 
       <section className="section">
         <div className="container">

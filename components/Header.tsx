@@ -10,9 +10,9 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Rentals", href: "/rentals" },
   { label: "Staging", href: "/staging" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about-us" },
   { label: "Insights", href: "/insights" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -44,7 +44,18 @@ export default function Header() {
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <span aria-hidden="true">☰</span>
+          {menuOpen ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <line x1="1" y1="1" x2="15" y2="15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <line x1="15" y1="1" x2="1" y2="15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+              <rect width="20" height="2" rx="1" fill="currentColor" />
+              <rect y="6" width="20" height="2" rx="1" fill="currentColor" />
+              <rect y="12" width="20" height="2" rx="1" fill="currentColor" />
+            </svg>
+          )}
         </button>
         <nav
           className={`nav-links ${menuOpen ? "open" : ""}`}
@@ -65,6 +76,13 @@ export default function Header() {
               </Link>
             );
           })}
+          <Link
+            href="/contact"
+            className="nav-cta button button-primary"
+            onClick={() => setMenuOpen(false)}
+          >
+            Get a quote
+          </Link>
         </nav>
       </div>
     </header>

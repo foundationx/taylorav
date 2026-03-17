@@ -6,6 +6,7 @@ import { StatsBar } from "../components/StatsBar";
 import { SectionCTA } from "../components/SectionCTA";
 import { Testimonials } from "../components/Testimonials";
 import { FAQSection } from "../components/FAQSection";
+import { TrustBar } from "../components/TrustBar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -145,8 +146,7 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow="Salt Lake City • Wasatch Front • Las Vegas"
-        headingText="Salt Lake City AV"
-        title="AV production, rentals, and staging—\nbuilt to look sharp and run on time."
+        title="AV that looks sharp and runs on time."
         description="Based in Salt Lake City, Taylor AV serves the Wasatch Front and beyond with corporate events, concerts, weddings, civic gatherings, and streamed broadcasts."
         image="/assets/hero-concert.jpg"
         imageAlt="Lighting and stage rig from a live production"
@@ -155,12 +155,13 @@ export default function HomePage() {
       />
       <div className="container">
         <StatsBar stats={heroStats} />
+        <TrustBar />
       </div>
 
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Production, rentals, staging woven into one command." />
+            <FadeHeading text="Production, rentals, and staging — one partner, one plan." />
             <div className="media-card media-card-home">
               <div className="image-frame">
                 <Image
@@ -233,17 +234,6 @@ export default function HomePage() {
               your budget intact.
             </p>
           </div>
-          <div className="service-area-grid">
-            {serviceArea.map((area) => (
-              <Link
-                key={area.label}
-                className="service-area-chip"
-                href={area.href}
-              >
-                {area.label}
-              </Link>
-            ))}
-          </div>
           <div className="grid" style={{ marginTop: "1.5rem" }}>
             {serviceArea.map((area) => (
               <article key={`${area.label}-detail`} className="card">
@@ -273,12 +263,10 @@ export default function HomePage() {
         />
         <div className="container">
           <div className="mountain-panel">
-            <FadeHeading text="Taylor AV engineers clear-sky experiences over the Wasatch Front." />
+            <FadeHeading text="The Wasatch Front's trusted AV partner since 2008." />
             <p>
               Our State of Utah Sole Source Cooperative Contract (#VC195059) and
-              decades of touring-grade experience mean public agencies,
-              corporate partners, and festivals see the same clarity as a
-              national integrator with a local voice.
+              decades of touring-grade experience mean public agencies, corporate partners, and festivals get the rigor of a national integrator with the responsiveness of a local partner.
             </p>
             <div className="grid">
               {mountainHighlights.map((item) => (
@@ -295,12 +283,11 @@ export default function HomePage() {
       <section className="section section-alt">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Proof we arrive on time and stay on cue." />
+            <FadeHeading text="Why partners keep calling us back." />
             <p className="content-narrow">
               Decades of touring-grade experience, disciplined crews, and a
               rental inventory that scales to any room prove Taylor AV
-              outperforms one-off providers. We steward every cue, speaker, and
-              performer so the story lands with craft and control.
+              outperforms one-off providers. We manage every cue, speaker placement, and signal path so the story lands with precision and control.
             </p>
             <div className="proof-grid">
               {proofItems.map((item) => (
@@ -323,6 +310,34 @@ export default function HomePage() {
               need—riggers, engineers, and technicians who keep the show sharp
               from Salt Lake City to Las Vegas.
             </p>
+            <div className="cta-banner-actions">
+              <Link href="/contact" className="button button-primary">Get a quote</Link>
+              <Link href="/services" className="button button-ghost">View services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sizzle-section" aria-label="Production showreel">
+        <video
+          className="sizzle-video"
+          src="/assets/hero-loop.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+        <div className="sizzle-overlay">
+          <h2>See the show before you sign a contract.</h2>
+          <p>
+            Decades of live concerts, keynotes, broadcasts, and festivals —
+            all produced by the same Utah-based crew you&apos;ll work with on
+            your event.
+          </p>
+          <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/portfolio" className="button button-primary">View our work</Link>
+            <Link href="/contact" className="button button-ghost">Talk to the team</Link>
           </div>
         </div>
       </section>

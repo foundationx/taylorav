@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
-import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { FAQSection, createFaqSchema } from "../../components/FAQSection";
 import type { Metadata } from "next";
 
@@ -9,6 +8,7 @@ export const metadata: Metadata = {
   title: "Services · Salt Lake City AV production leadership",
   description:
     "Taylor AV delivers AV production direction, stage management, and streaming for corporate, civic, and live events across Salt Lake City and the Wasatch Front.",
+  alternates: { canonical: '/services' },
 };
 
 const serviceCategories = [
@@ -89,31 +89,19 @@ export default function ServicesPage() {
   return (
     <>
       <Hero
-        eyebrow="Services aware • Salt Lake City + Wasatch Front"
-        headingText="AV Production Services"
-        title="Production direction engineered for the Wasatch Front."
-        description="From corporate stages to festivals and streamed broadcasts, Taylor AV keeps Utah events polished with engineering, staging, and rental depth."
+        eyebrow="Services • Salt Lake City & Wasatch Front"
+        title="AV production, staging, and crew — handled."
+        description="Taylor AV brings the gear, the team, and the plan. Audio, video, lighting, staging, and live streaming for corporate events, concerts, and everything in between."
         image="/assets/services-bg.jpg"
         imageAlt="Audio visual equipment rigged for an event"
         taglineWords={["Plan", "Coordinate", "Deliver"]}
         parallaxSpeed={0.08}
       />
 
-      <section
-        className="section section-compact"
-        aria-label="Breadcrumb navigation"
-      >
-        <div className="container">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Services" }]}
-          />
-        </div>
-      </section>
-
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Engineering, design, and production leadership." />
+            <FadeHeading text="Audio, video, lighting, and staging — fully managed." />
             <p>
               We document every cue, load-in path, and lighting focus so Taylor
               AV, venue partners, and designers stay aligned. Our Salt Lake City

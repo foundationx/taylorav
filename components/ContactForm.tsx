@@ -1,13 +1,14 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { trackEvent } from '../lib/analytics';
-import { buildContactFallbackUrl, type ContactPayload } from '../lib/contact';
+import { type ContactPayload } from '../lib/contact';
 
 const initialForm: ContactPayload = {
   fullName: '',
   email: '',
   phone: '',
+  eventType: '',
   eventDate: '',
   venue: '',
   audience: '',
@@ -25,9 +26,7 @@ export function ContactForm() {
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [submitState, setSubmitState] = useState<SubmitState>({ type: 'idle' });
 
-  const fallbackUrl = useMemo(() => buildContactFallbackUrl(form), [form]);
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitState({ type: 'submitting' });
 
@@ -78,10 +77,10 @@ export function ContactForm() {
           <div>{submitState.message}</div>
           <a
             className="button button-ghost form-fallback"
-            href={fallbackUrl}
-            onClick={() => trackEvent('contact_fallback_email_click', { source: 'contact_form' })}
+            href="tel:+18015201699"
+            onClick={() => trackEvent('contact_fallback_call_click', { source: 'contact_form' })}
           >
-            Email this request instead
+            Call us instead
           </a>
         </div>
       ) : null}
@@ -140,6 +139,29 @@ export function ContactForm() {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="event-type">Event type</label>
+          <select
+            id="event-type"
+            name="event-type"
+            value={form.eventType}
+            onChange={(event) => setForm((current) => ({ ...current, eventType: event.target.value }))}
+          >
+            <option value="">— Select one —</option>
+            <option value="Corporate / Conference">Corporate / Conference</option>
+            <option value="Concert / Live Music">Concert / Live Music</option>
+            <option value="Festival / Outdoor">Festival / Outdoor</option>
+            <option value="Wedding / Gala">Wedding / Gala</option>
+            <option value="Civic / Government">Civic / Government</option>
+            <option value="Streaming / Broadcast">Streaming / Broadcast</option>
+            <option value="Touring / Residency">Touring / Residency</option>
+            <option value="Education / University">Education / University</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
           <label htmlFor="date">Event date</label>
           <input
             type="date"
@@ -149,20 +171,20 @@ export function ContactForm() {
             onChange={(event) => setForm((current) => ({ ...current, eventDate: event.target.value }))}
           />
         </div>
-      </div>
-
-      <div className="form-row">
         <div className="form-group">
           <label htmlFor="venue">Venue / location</label>
           <input
             type="text"
-            id="venue"
-            name="venue"
+            id="venue-top"
+            name="venue-top"
             placeholder="City, venue, or address"
             value={form.venue}
             onChange={(event) => setForm((current) => ({ ...current, venue: event.target.value }))}
           />
         </div>
+      </div>
+
+      <div className="form-row">
         <div className="form-group">
           <label htmlFor="audience">Audience size</label>
           <input
@@ -176,6 +198,7 @@ export function ContactForm() {
         </div>
       </div>
 
+
       <div className="form-group">
         <label htmlFor="message">What's the show?</label>
         <textarea
@@ -186,10 +209,6 @@ export function ContactForm() {
           value={form.message}
           onChange={(event) => setForm((current) => ({ ...current, message: event.target.value }))}
         />
-      </div>
-
-      <div className="form-hint">
-        Quote requests post to a delivery webhook when configured. If that pipeline is unavailable, the form gives you an email fallback instead of dropping the lead.
       </div>
 
       <button type="submit" disabled={submitState.type === 'submitting'}>
