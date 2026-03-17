@@ -5,8 +5,9 @@ import { insightPosts } from '../../lib/insights';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Insights & Playbooks | Taylor AV',
-  description: 'Guides and checklists that help planners scope AV, staging, and streaming across the Mountain West.'
+  title: 'Insights & Playbooks',
+  description: 'Guides and checklists that help planners scope AV, staging, and streaming across the Mountain West.',
+  alternates: { canonical: '/insights' },
 };
 
 export default function InsightsPage() {
@@ -14,11 +15,10 @@ export default function InsightsPage() {
     <>
       <Hero
         eyebrow="Insights"
-        headingText="AV Planning Insights"
-        title="Playbooks for planners who need more than a rental list."
+        title="Playbooks for serious planners."
         description="We document the logistics we wish every partner had—download, adapt, and bring sharper expectations to your next show."
         image="/assets/community-event.jpg"
-        imageAlt="Insights hero"
+        imageAlt="Taylor AV event production crew on stage"
         taglineWords={['Guides', 'Checklists', 'Playbooks']}
         parallaxSpeed={0.08}
       />

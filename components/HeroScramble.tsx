@@ -4,7 +4,7 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-export function HeroScramble({ text }: { text: string }) {
+export function HeroScramble({ text, triggerKey = 0 }: { text: string; triggerKey?: number }) {
   const normalized = useMemo(() => text.replace(/\\n/g, '\n'), [text]);
   const lines = useMemo(() => normalized.split('\n'), [normalized]);
   const revealableCount = useMemo(
@@ -31,41 +31,51 @@ export function HeroScramble({ text }: { text: string }) {
           if (intervalId) clearInterval(intervalId);
           setPhase('done');
         }
-      }, 55);
-    }, 140);
+      }, 28);
+    }, 50);
 
     return () => {
       clearTimeout(startTimeout);
       if (intervalId) clearInterval(intervalId);
     };
-  }, [normalized, revealableCount]);
+  }, [normalized, revealableCount, triggerKey]);
 
   let revealed = 0;
 
   return (
     <span className="hero-scramble" role="presentation" aria-hidden="true">
-      {lines.map((line, lineIndex) => (
-        <span key={`${line}-${lineIndex}`} className="hero-line">
-          {Array.from(line).map((char, charIndex) => {
-            if (/\s/.test(char)) {
-              return <Fragment key={`${lineIndex}-${charIndex}-space`}> </Fragment>;
-            }
+      {lines.map((line, lineIndex) => {
+        // Split into word/space tokens — words are kept together with nowrap
+        const tokens = line.split(/(\s+)/);
+        return (
+          <span key={`line-${lineIndex}`} className="hero-line">
+            {tokens.map((token, tokenIndex) => {
+              if (/^\s+$/.test(token)) {
+                return <Fragment key={`${lineIndex}-${tokenIndex}-space`}> </Fragment>;
+              }
+              // Wrap each word in nowrap so it can never break mid-character
+              return (
+                <span key={`${lineIndex}-${tokenIndex}-word`} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                  {Array.from(token).map((char, charIndex) => {
+                    revealed += 1;
+                    const isResolved = phase === 'done' || (phase === 'animating' && revealed <= tick);
+                    const displayChar =
+                      phase === 'idle' || isResolved
+                        ? char
+                        : letters[(tick + lineIndex + tokenIndex + charIndex) % letters.length];
 
-            revealed += 1;
-            const isResolved = phase === 'done' || (phase === 'animating' && revealed <= tick);
-            const displayChar =
-              phase === 'idle' || isResolved
-                ? char
-                : letters[(tick + lineIndex + charIndex) % letters.length];
-
-            return (
-              <span key={`${lineIndex}-${charIndex}-${displayChar}`} className="hero-letter">
-                {displayChar}
-              </span>
-            );
-          })}
-        </span>
-      ))}
+                    return (
+                      <span key={`${lineIndex}-${tokenIndex}-${charIndex}`} className="hero-letter">
+                        {displayChar}
+                      </span>
+                    );
+                  })}
+                </span>
+              );
+            })}
+          </span>
+        );
+      })}
     </span>
   );
 }

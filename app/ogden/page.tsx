@@ -4,9 +4,16 @@ import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ogden AV Production | Taylor AV",
+  title: "Ogden AV Production",
   description:
     "Ogden arenas, Weber County festivals, and community gatherings backed by Taylor AV crews and rentals.",
+  alternates: { canonical: '/ogden' },
+  other: {
+    'geo.region': 'US-UT',
+    'geo.placename': 'Ogden',
+    'geo.position': '41.2230;-111.9738',
+    'ICBM': '41.2230, -111.9738',
+  },
 };
 
 const highlights = [
@@ -32,8 +39,7 @@ export default function OgdenPage() {
     <>
       <Hero
         eyebrow="Ogden, Weber County"
-        headingText="Ogden AV"
-        title="Ogden AV production for festivals, venues, and civic events."
+        title="Ogden AV production."
         description="From amphitheaters to city plazas, Taylor AV scales the same touring-grade rigs used downtown for Ogden audiences."
         image="/assets/community-event.jpg"
         imageAlt="Ogden community event"

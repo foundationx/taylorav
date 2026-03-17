@@ -8,7 +8,6 @@ import { HeroScramble } from './HeroScramble';
 
 type HeroProps = {
   eyebrow: string;
-  headingText?: string;
   title: string;
   description: string;
   image: string;
@@ -22,7 +21,6 @@ type HeroProps = {
 export function Hero(props: HeroProps) {
   const {
     eyebrow,
-    headingText,
     title,
     description,
     image,
@@ -32,9 +30,7 @@ export function Hero(props: HeroProps) {
     parallaxSpeed = 0.12,
     videoFullBleed = false
   } = props;
-  const h1Text = headingText ?? title;
-  const normalizedTitle = useMemo(() => title.replace(/\\n/g, '\n'), [title]);
-  const normalizedHeading = useMemo(() => h1Text.replace(/\\n/g, '\n'), [h1Text]);
+  const normalizedHeading = useMemo(() => title.replace(/\\n/g, '\n'), [title]);
   const headingLines = useMemo(() => normalizedHeading.split('\n'), [normalizedHeading]);
   const imageRef = useRef<HTMLDivElement>(null);
 
@@ -103,7 +99,7 @@ export function Hero(props: HeroProps) {
             <span className="hero-text">
               <span className="hero-static" aria-hidden="true">
                 {headingLines.map((line, index) => (
-                  <span key={`${line}-${index}`}>
+                  <span key={index}>
                     {line}
                     {index < headingLines.length - 1 ? <br /> : null}
                   </span>
@@ -113,7 +109,6 @@ export function Hero(props: HeroProps) {
             </span>
             <span className="sr-only">{normalizedHeading.replace(/\n/g, ' ')}</span>
           </h1>
-          {headingText ? <p className="hero-title-copy">{normalizedTitle}</p> : null}
           <p className="hero-lede">{description}</p>
           <div className="hero-actions">
             <Link

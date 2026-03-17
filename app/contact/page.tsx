@@ -1,6 +1,5 @@
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
-import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { ContactForm } from "../../components/ContactForm";
 import type { Metadata } from "next";
 
@@ -8,6 +7,7 @@ export const metadata: Metadata = {
   title: "Contact · Salt Lake City AV team",
   description:
     "Contact Taylor AV in Salt Lake City for AV production, rentals, staging, and technical crews across the Wasatch Front.",
+  alternates: { canonical: '/contact' },
 };
 
 const checklist = [
@@ -23,25 +23,13 @@ export default function ContactPage() {
     <>
       <Hero
         eyebrow="Contact • Salt Lake City"
-        headingText="Contact Taylor AV"
-        title="Let us scope your next event with clarity and a real crew."
+        title="Let's scope your next event."
         description="Based in Riverton, we travel across the Wasatch Front and beyond for major productions, tours, and civic events."
         image="/assets/community-events.jpg"
         imageAlt="Event staff coordinating AV operations"
         taglineWords={["Reach", "Plan", "Execute"]}
         parallaxSpeed={0.06}
       />
-
-      <section
-        className="section section-compact"
-        aria-label="Breadcrumb navigation"
-      >
-        <div className="container">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-          />
-        </div>
-      </section>
 
       <section className="section">
         <div className="container">
@@ -78,17 +66,25 @@ export default function ContactPage() {
           <div className="glass-panel">
             <FadeHeading text="Where to find us" />
             <p>
-              There are plenty of companies who can provide the equipment you
-              need, but what truly counts are the people behind the gear. Our
-              full-time AV techs are dedicated to the success of your event not
-              only because it is their job, but because they are passionate
-              about making events lively across the Salt Lake Valley.
+              Our Riverton warehouse keeps equipment pre-staged and technicians on standby. We are minutes from downtown Salt Lake City and ready to mobilize across the Wasatch Front on short notice — no waiting on freight from out of state.
             </p>
             <div className="service-area">
               <span>12963 Redwood Rd, Riverton, UT 84065</span>
               <span>
                 <a href="tel:+18015201699">+1 (801) 520-1699</a>
               </span>
+            </div>
+            <div className="map-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=12963+Redwood+Rd,+Riverton,+UT+84065&output=embed"
+                width="100%"
+                height="320"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Taylor AV office location"
+              />
             </div>
             <div className="quote-block">
               <p>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradient along path length: fade in, hold, fade out -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#5a9fff" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#5a9fff" stop-opacity="0.18"/>
+      <stop offset="75%"  stop-color="#7ab8ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#7ab8ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#3b7de8" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#3b7de8" stop-opacity="0.14"/>
+      <stop offset="70%"  stop-color="#6fa8ff" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#6fa8ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#90c4ff" stop-opacity="0"/>
+      <stop offset="20%"  stop-color="#90c4ff" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#60a0ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#60a0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#4488dd" stop-opacity="0"/>
+      <stop offset="35%"  stop-color="#4488dd" stop-opacity="0.16"/>
+      <stop offset="75%"  stop-color="#7ab4ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#7ab4ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g5" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%"   stop-color="#3070cc" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#3070cc" stop-opacity="0.20"/>
+      <stop offset="70%"  stop-color="#5595e8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#5595e8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#80b8ff" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#80b8ff" stop-opacity="0.13"/>
+      <stop offset="80%"  stop-color="#aad0ff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#aad0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#507aff" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#507aff" stop-opacity="0.24"/>
+      <stop offset="65%"  stop-color="#70a0ff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#70a0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g8" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%"   stop-color="#2860bb" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#2860bb" stop-opacity="0.18"/>
+      <stop offset="70%"  stop-color="#4a88dd" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#4a88dd" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- === LARGE SWEEPING CURVES === -->
+
+  <!-- Grand arc from lower-left sweeping up and across -->
+  <path d="M -80,820 C 180,600 420,180 780,260 S 1200,500 1540,320"
+        fill="none" stroke="url(#g1)" stroke-width="1.5"/>
+
+  <!-- Wide shallow S-curve through the middle zone -->
+  <path d="M -60,480 C 200,300 500,600 900,380 S 1250,180 1520,340"
+        fill="none" stroke="url(#g2)" stroke-width="1.2"/>
+
+  <!-- Upper sweeping line from right, dipping down centre -->
+  <path d="M 1540,140 C 1200,80 900,340 600,220 S 240,60 -80,180"
+        fill="none" stroke="url(#g5)" stroke-width="1.0"/>
+
+  <!-- Deep arc from top-left curling to lower-right -->
+  <path d="M 60,-20 C 200,200 100,500 380,640 S 820,800 1100,700 S 1360,560 1540,680"
+        fill="none" stroke="url(#g4)" stroke-width="1.4"/>
+
+  <!-- Gentle long arc, low centre of mass -->
+  <path d="M -100,700 C 300,760 600,400 1000,520 S 1300,680 1540,580"
+        fill="none" stroke="url(#g3)" stroke-width="1.0"/>
+
+  <!-- === TIGHTER DETAIL CURVES === -->
+
+  <!-- Small arc, upper-left cluster -->
+  <path d="M 80,60 C 240,160 320,80 500,140 S 680,240 720,180"
+        fill="none" stroke="url(#g6)" stroke-width="0.8"/>
+
+  <!-- Upper-right curl -->
+  <path d="M 980,30 C 1100,120 1060,260 1200,200 S 1380,80 1480,160"
+        fill="none" stroke="url(#g7)" stroke-width="0.9"/>
+
+  <!-- Mid-page gentle wiggle -->
+  <path d="M 200,440 C 380,380 460,500 640,430 S 840,320 1020,400 S 1200,500 1360,440"
+        fill="none" stroke="url(#g6)" stroke-width="0.7"/>
+
+  <!-- Lower detail arc -->
+  <path d="M 300,800 C 500,720 700,820 900,760 S 1100,680 1300,740"
+        fill="none" stroke="url(#g8)" stroke-width="0.8"/>
+
+  <!-- === VERY FINE ACCENT LINES === -->
+
+  <!-- Hairline sweep, upper third -->
+  <path d="M -80,220 C 200,140 500,280 800,200 S 1100,100 1440,200"
+        fill="none" stroke="#5a9fff" stroke-width="0.5" stroke-opacity="0.08"/>
+
+  <!-- Hairline sweep, lower third -->
+  <path d="M 0,660 C 300,580 600,700 900,620 S 1200,540 1540,600"
+        fill="none" stroke="#4488cc" stroke-width="0.5" stroke-opacity="0.07"/>
+
+  <!-- Diagonal cross sweep, subtle -->
+  <path d="M -60,900 C 200,700 500,400 800,300 S 1100,260 1540,80"
+        fill="none" stroke="#7ab0ff" stroke-width="0.6" stroke-opacity="0.06"/>
+
+  <!-- Thin near-vertical curl on the right side -->
+  <path d="M 1300,-40 C 1380,200 1200,400 1320,600 S 1460,760 1380,920"
+        fill="none" stroke="#6090ee" stroke-width="0.7" stroke-opacity="0.09"/>
+
+  <!-- Thin near-vertical curl on the left side -->
+  <path d="M 160,-20 C 80,180 200,380 120,560 S -20,720 100,900"
+        fill="none" stroke="#5080dd" stroke-width="0.6" stroke-opacity="0.08"/>
+</svg>

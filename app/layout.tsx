@@ -1,8 +1,24 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Space_Grotesk, IBM_Plex_Sans } from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { FloatingCTA } from '../components/FloatingCTA';
+import { CookieConsent } from '../components/CookieConsent';
 import './globals.css';
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-head',
+  display: 'swap',
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 const siteUrl = 'https://taylorav.com';
 const defaultDescription =
@@ -31,7 +47,11 @@ const jsonLd = {
         addressCountry: 'US'
       },
       areaServed: ['Salt Lake City', 'Ogden', 'Provo', 'Park City', 'Utah County', 'Las Vegas'],
-      sameAs: [],
+      sameAs: [
+        'https://www.instagram.com/taylorav',
+        'https://www.linkedin.com/company/taylor-av',
+        'https://www.youtube.com/@taylorav'
+      ],
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
@@ -123,7 +143,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
       <body>
         <script dangerouslySetInnerHTML={{ __html: 'window.dataLayer = window.dataLayer || [];' }} />
         {gaMeasurementId ? (
@@ -148,6 +168,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <FloatingCTA />
+        <CookieConsent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
