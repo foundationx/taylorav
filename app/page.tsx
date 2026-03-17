@@ -318,22 +318,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="sizzle-section" aria-label="Production showreel">
-        <video
-          className="sizzle-video"
-          src="/assets/hero-loop.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        />
+      <section className="sizzle-section" aria-label="Work with us">
+        <div className="sizzle-bg" aria-hidden="true">
+          <div className="sizzle-orb sizzle-orb-1" />
+          <div className="sizzle-orb sizzle-orb-2" />
+          <div className="sizzle-orb sizzle-orb-3" />
+          <div className="sizzle-grid" />
+        </div>
         <div className="sizzle-overlay">
-          <h2>See the show before you sign a contract.</h2>
+          <h2>Built on 15 years of live production.</h2>
           <p>
-            Decades of live concerts, keynotes, broadcasts, and festivals —
-            all produced by the same Utah-based crew you&apos;ll work with on
-            your event.
+            Concerts, keynotes, broadcasts, and festivals —
+            all run by the same Utah-based crew you&apos;ll work with on your event.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/portfolio" className="button button-primary">View our work</Link>
