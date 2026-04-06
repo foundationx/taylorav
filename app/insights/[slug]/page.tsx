@@ -52,13 +52,21 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
+    image: 'https://taylorav.com/assets/hero-concert.jpg',
     author: {
       '@type': 'Organization',
       name: 'Taylor AV',
+      url: 'https://taylorav.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Taylor AV',
+      url: 'https://taylorav.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://taylorav.com/assets/logo.png',
+      },
     },
   };
 

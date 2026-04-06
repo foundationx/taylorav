@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Hero } from "../../components/Hero";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { FadeHeading } from "../../components/FadeHeading";
 import { StageGallery, StageCard } from "../../components/StageGallery";
 import { SectionCTA } from "../../components/SectionCTA";
@@ -97,6 +98,16 @@ const stagingGallery: StageCard[] = [
 export default function StagingPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Staging' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Staging • Decks, Truss & Rigging"
         title="Stages and rigging for every scale."

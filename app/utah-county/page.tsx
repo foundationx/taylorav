@@ -1,11 +1,12 @@
 import { Hero } from '../../components/Hero';
 import { FadeHeading } from '../../components/FadeHeading';
 import { SectionCTA } from '../../components/SectionCTA';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Utah County AV Production',
-  description: 'County fairs, civic gatherings, and mountain retreats supported by Taylor AV staging and crews.',
+  description: 'Taylor AV supports Utah County fairs, civic gatherings, and mountain retreats with mobile staging, rental inventory, and Sole Source contract procurement.',
   alternates: { canonical: '/utah-county' },
   other: {
     'geo.region': 'US-UT',
@@ -30,9 +31,39 @@ const highlights = [
   }
 ];
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://taylorav.com#organization',
+  name: 'Taylor AV',
+  url: 'https://taylorav.com',
+  telephone: '+1 (801) 520-1699',
+  image: 'https://taylorav.com/assets/hero-concert.jpg',
+  logo: 'https://taylorav.com/assets/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '12963 Redwood Rd',
+    addressLocality: 'Riverton',
+    addressRegion: 'UT',
+    postalCode: '84065',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Utah County', sameAs: 'https://www.wikidata.org/wiki/Q110141' },
+};
+
 export default function UtahCountyPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Utah County' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Utah County"
         title="Utah County AV production."
@@ -70,6 +101,10 @@ export default function UtahCountyPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </>
   );
 }

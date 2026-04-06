@@ -1,12 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Park City AV Production",
   description:
-    "Dedicated Park City AV production crews for Sundance events, mountain resorts, and luxury hospitality events.",
+    "Taylor AV delivers mountain-ready AV production for Park City resorts, Sundance screenings, and luxury hospitality events with snow-proof logistics and touring-grade gear.",
   alternates: { canonical: '/park-city' },
   other: {
     'geo.region': 'US-UT',
@@ -34,9 +35,39 @@ const highlights = [
   },
 ];
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://taylorav.com#organization',
+  name: 'Taylor AV',
+  url: 'https://taylorav.com',
+  telephone: '+1 (801) 520-1699',
+  image: 'https://taylorav.com/assets/hero-concert.jpg',
+  logo: 'https://taylorav.com/assets/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '12963 Redwood Rd',
+    addressLocality: 'Riverton',
+    addressRegion: 'UT',
+    postalCode: '84065',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'City', name: 'Park City', sameAs: 'https://www.wikidata.org/wiki/Q491524' },
+};
+
 export default function ParkCityPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Park City' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Park City, Utah"
         title="Park City AV production for resorts, screenings, and brand events."
@@ -76,6 +107,10 @@ export default function ParkCityPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </>
   );
 }

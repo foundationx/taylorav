@@ -10,6 +10,19 @@ export const metadata: Metadata = {
   alternates: { canonical: '/insights' },
 };
 
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Taylor AV Insights & Playbooks',
+  url: 'https://taylorav.com/insights',
+  itemListElement: insightPosts.map((post, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: `https://taylorav.com/insights/${post.slug}`,
+    name: post.title,
+  })),
+};
+
 export default function InsightsPage() {
   return (
     <>
@@ -48,6 +61,10 @@ export default function InsightsPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
     </>
   );
 }

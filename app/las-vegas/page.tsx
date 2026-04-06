@@ -1,12 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Las Vegas AV Support",
   description:
-    "Utah-based crews and gear deployed to Las Vegas corridors for corporate events and touring residencies.",
+    "Taylor AV deploys Utah-based engineers and touring-grade gear to Las Vegas for corporate events, hotel ballroom productions, and multi-city touring residencies.",
   alternates: { canonical: '/las-vegas' },
   other: {
     'geo.region': 'US-NV',
@@ -34,9 +35,39 @@ const highlights = [
   },
 ];
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://taylorav.com#organization',
+  name: 'Taylor AV',
+  url: 'https://taylorav.com',
+  telephone: '+1 (801) 520-1699',
+  image: 'https://taylorav.com/assets/hero-concert.jpg',
+  logo: 'https://taylorav.com/assets/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '12963 Redwood Rd',
+    addressLocality: 'Riverton',
+    addressRegion: 'UT',
+    postalCode: '84065',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'City', name: 'Las Vegas', sameAs: 'https://www.wikidata.org/wiki/Q49111' },
+};
+
 export default function LasVegasPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Las Vegas' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Las Vegas, Nevada"
         title="Las Vegas AV production."
@@ -76,6 +107,10 @@ export default function LasVegasPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </>
   );
 }

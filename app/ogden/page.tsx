@@ -1,12 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Ogden AV Production",
   description:
-    "Ogden arenas, Weber County festivals, and community gatherings backed by Taylor AV crews and rentals.",
+    "Taylor AV supports Ogden arenas, Weber County festivals, and civic gatherings with touring-grade audio, LED staging, and rapid-response crews based minutes away.",
   alternates: { canonical: '/ogden' },
   other: {
     'geo.region': 'US-UT',
@@ -34,9 +35,39 @@ const highlights = [
   },
 ];
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://taylorav.com#organization',
+  name: 'Taylor AV',
+  url: 'https://taylorav.com',
+  telephone: '+1 (801) 520-1699',
+  image: 'https://taylorav.com/assets/hero-concert.jpg',
+  logo: 'https://taylorav.com/assets/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '12963 Redwood Rd',
+    addressLocality: 'Riverton',
+    addressRegion: 'UT',
+    postalCode: '84065',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'City', name: 'Ogden', sameAs: 'https://www.wikidata.org/wiki/Q185490' },
+};
+
 export default function OgdenPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Ogden' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Ogden, Weber County"
         title="Ogden AV production."
@@ -75,6 +106,10 @@ export default function OgdenPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </>
   );
 }

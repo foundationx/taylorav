@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "../../components/Hero";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
 import type { Metadata } from "next";
@@ -51,6 +52,16 @@ const highlights = [
 export default function RentalsPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Rentals' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Rentals • Audio, Video & Lighting"
         title="Rentals where uptime matters."

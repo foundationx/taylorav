@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Hero } from "../../components/Hero";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { FadeHeading } from "../../components/FadeHeading";
 import { FAQSection, createFaqSchema } from "../../components/FAQSection";
 import type { Metadata } from "next";
@@ -88,6 +90,16 @@ const faqItems = [
 export default function ServicesPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Services' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Services • Salt Lake City & Wasatch Front"
         title="AV production, staging, and crew — handled."
@@ -203,6 +215,10 @@ export default function ServicesPage() {
               and beyond so your service is guided by a real, responsive team
               that can pivot when the scope changes.
             </p>
+            <div className="cta-banner-actions">
+              <Link href="/contact" className="button button-primary">Get a quote</Link>
+              <Link href="/rentals" className="button button-ghost">Browse rentals</Link>
+            </div>
           </div>
         </div>
       </section>

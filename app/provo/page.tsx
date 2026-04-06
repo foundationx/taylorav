@@ -1,12 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Provo AV Production",
   description:
-    "BYU, UVU, and Utah Valley corporate events led by Taylor AV's staging, streaming, and rental teams.",
+    "Taylor AV leads BYU, UVU, and Utah Valley corporate events with disciplined staging, hybrid streaming, and rental packages that meet campus compliance requirements.",
   alternates: { canonical: '/provo' },
   other: {
     'geo.region': 'US-UT',
@@ -34,9 +35,39 @@ const highlights = [
   },
 ];
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://taylorav.com#organization',
+  name: 'Taylor AV',
+  url: 'https://taylorav.com',
+  telephone: '+1 (801) 520-1699',
+  image: 'https://taylorav.com/assets/hero-concert.jpg',
+  logo: 'https://taylorav.com/assets/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '12963 Redwood Rd',
+    addressLocality: 'Riverton',
+    addressRegion: 'UT',
+    postalCode: '84065',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'City', name: 'Provo', sameAs: 'https://www.wikidata.org/wiki/Q80930' },
+};
+
 export default function ProvoPage() {
   return (
     <>
+      <section className="section section-compact" aria-label="Breadcrumb navigation">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Provo' },
+            ]}
+          />
+        </div>
+      </section>
       <Hero
         eyebrow="Provo & Utah Valley"
         title="Provo AV production."
@@ -75,6 +106,10 @@ export default function ProvoPage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
     </>
   );
 }
