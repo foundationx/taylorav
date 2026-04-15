@@ -16,6 +16,7 @@ type HeroProps = {
   taglineWords?: string[];
   parallaxSpeed?: number;
   videoFullBleed?: boolean;
+  animateTitle?: boolean;
 };
 
 export function Hero(props: HeroProps) {
@@ -28,7 +29,8 @@ export function Hero(props: HeroProps) {
     backgroundVideo,
     taglineWords,
     parallaxSpeed = 0.12,
-    videoFullBleed = false
+    videoFullBleed = false,
+    animateTitle = true
   } = props;
   const normalizedHeading = useMemo(() => title.replace(/\\n/g, '\n'), [title]);
   const headingLines = useMemo(() => normalizedHeading.split('\n'), [normalizedHeading]);
@@ -96,18 +98,29 @@ export function Hero(props: HeroProps) {
         <div className="hero-content">
           <p className="hero-eyebrow">{eyebrow}</p>
           <h1>
-            <span className="hero-text">
-              <span className="hero-static" aria-hidden="true">
-                {headingLines.map((line, index) => (
-                  <span key={index}>
-                    {line}
-                    {index < headingLines.length - 1 ? <br /> : null}
+            {animateTitle ? (
+              <>
+                <span className="hero-text">
+                  <span className="hero-static" aria-hidden="true">
+                    {headingLines.map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        {index < headingLines.length - 1 ? <br /> : null}
+                      </span>
+                    ))}
                   </span>
-                ))}
-              </span>
-              <HeroScramble text={normalizedHeading} />
-            </span>
-            <span className="sr-only">{normalizedHeading.replace(/\n/g, ' ')}</span>
+                  <HeroScramble text={normalizedHeading} />
+                </span>
+                <span className="sr-only">{normalizedHeading.replace(/\n/g, ' ')}</span>
+              </>
+            ) : (
+              headingLines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < headingLines.length - 1 ? <br /> : null}
+                </span>
+              ))
+            )}
           </h1>
           <p className="hero-lede">{description}</p>
           <div className="hero-actions">

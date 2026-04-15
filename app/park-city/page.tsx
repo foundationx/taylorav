@@ -1,5 +1,4 @@
 import { Hero } from "../../components/Hero";
-import { FadeHeading } from "../../components/FadeHeading";
 import { SectionCTA } from "../../components/SectionCTA";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
@@ -76,12 +75,13 @@ export default function ParkCityPage() {
         imageAlt="Park City stage build"
         taglineWords={["Sundance", "Resorts", "Snow-ready"]}
         parallaxSpeed={0.08}
+        animateTitle={false}
       />
 
       <section className="section">
         <div className="container">
           <div className="glass-panel">
-            <FadeHeading text="Mountain logistics dialed." />
+            <h2>Mountain logistics dialed.</h2>
             <p className="content-narrow">
               Access roads, snowstorms, and limited docks are no surprise. We
               rehearse the run-of-show with resort partners so your event stays
