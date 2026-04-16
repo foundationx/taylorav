@@ -75,7 +75,6 @@ export default function ParkCityPage() {
         imageAlt="Park City stage build"
         taglineWords={["Sundance", "Resorts", "Snow-ready"]}
         parallaxSpeed={0.08}
-        animateTitle={false}
       />
 
       <section className="section">
